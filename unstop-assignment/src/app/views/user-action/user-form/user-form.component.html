@@ -1,0 +1,43 @@
+<div >
+  <p>Add new user</p>
+  <form [formGroup]="userForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" formControlName="name">
+      <mat-error *ngIf="userForm.controls['name'].hasError('required')">
+        Name is required
+      </mat-error>
+      <mat-error *ngIf="userForm.controls['name'].hasError('pattern')">
+        Name must contain only alphabets and spaces.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email">
+      <mat-error *ngIf="userForm.controls['email'].hasError('required')">
+        Email is required
+      </mat-error>
+      <mat-error *ngIf="userForm.controls['email'].hasError('email')">
+        Enter a valid email address
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Select Role</mat-label>
+      <mat-select formControlName="role">
+        <mat-option value="">--</mat-option>
+        <mat-option *ngFor="let userRole of userRoles" [value]="userRole">
+          {{userRole}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="userForm.controls['role'].hasError('required')">
+        Please select a role
+      </mat-error>
+    </mat-form-field>
+    <div class="action-btn">
+      <app-generic-button-formate buttonText="Cancel" buttonColor="warn" [isPopupButton]="true" (btnEvent)="closeFormModal($event)"></app-generic-button-formate>
+      <app-generic-button-formate buttonText="Submit" [isDisable]="userForm.invalid" (btnEvent)="addNewUser()"></app-generic-button-formate>
+    </div>
+  </form>
+</div>

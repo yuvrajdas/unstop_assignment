@@ -1,0 +1,26 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 2px 30px 30px 30px;
+
+  mat-form-field {
+    display: block;
+    width: 412px;
+  }
+
+  .action-btn{
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+  }
+}
+
+p {
+  text-align: center;
+  padding: 23px 0;
+  font-size: 24px;
+  margin: 0px !important;
+  font-weight: 500;
+  color: #191919;
+}

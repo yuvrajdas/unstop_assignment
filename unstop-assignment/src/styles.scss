@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  // background: #1c4980;
+  background: var(--background);
+}
+
+
+:root {
+
+  --background:#383838;
+
+  --primary-text-color: #f7f7f7;;
+  --heading-font:18px;
+  --text-font: 16px;
+}
+.add-user-form{
+  background: #4c5270 !important;
+}
